@@ -4,4 +4,3 @@ ktor:
   application:
     modules:
       - com.example.MainKt.module
-

@@ -12,4 +12,3 @@ data class Track(
     val isLocal: Boolean,
     val localUri: String? = null
 )
-
