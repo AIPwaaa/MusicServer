@@ -76,7 +76,7 @@ fun Application.configureRouting() {
                     }
 
                     val duration = mp3file.lengthInMilliseconds
-                    val url = "/static/$fileName"
+                    val url = "http://10.0.2.2:8080/static/$fileName"
 
                     track = Track(
                         id = id,
@@ -96,7 +96,7 @@ fun Application.configureRouting() {
                             it[TracksTable.duration] = duration
                             it[TracksTable.url] = url
                             it[TracksTable.isLocal] = true
-                            it[TracksTable.localUri] = file.absolutePath
+                            it[TracksTable.localUri] = null
                         }
                     }
                 }
