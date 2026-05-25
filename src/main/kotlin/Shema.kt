@@ -14,3 +14,22 @@ object TracksTable : Table("tracks") {
 
     override val primaryKey = PrimaryKey(id)
 }
+
+object UsersTable : Table("users") {
+    val id = varchar("id", 50)
+    val username = varchar("username", 100).uniqueIndex()
+    val email = varchar("email", 150).uniqueIndex()
+    val passwordHash = varchar("password_hash", 255)
+    val status = varchar("status", 100).nullable()
+
+    override val primaryKey = PrimaryKey(id)
+}
+
+object PendingRegistrationsTable : Table("pending_registrations") {
+    val email = varchar("email", 150)
+    val username = varchar("username", 100)
+    val passwordHash = varchar("password_hash", 255)
+    val code = varchar("code", 6)
+
+    override val primaryKey = PrimaryKey(email)
+}
